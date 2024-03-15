@@ -50,16 +50,16 @@ public class Map {
         curMapNum++;
         if (curMapNum == 1) {
             curMap = new Space[][]{
-                    {treeSpace, treeSpace, treeSpace, treeSpace, treeSpace, treeSpace, treeSpace, treeSpace, treeSpace},
-                    {treeSpace, treeSpace, treeSpace, treeSpace, treeSpace, treeSpace, treeSpace, treeSpace, treeSpace},
-                    {treeSpace, treeSpace, treeSpace, treeSpace, treeSpace, treeSpace, treeSpace, treeSpace, treeSpace},
-                    {treeSpace, grassSpace, grassSpace, grassSpace, grassSpace, grassSpace, grassSpace, treeSpace, treeSpace},
-                    {treeSpace, grassSpace, treeSpace, treeSpace, treeSpace, treeSpace, grassSpace, treeSpace, treeSpace},
-                    {treeSpace, grassSpace, treeSpace, treeSpace, treeSpace, treeSpace, grassSpace, treeSpace, treeSpace},
-                    {treeSpace, grassSpace, treeSpace, treeSpace, treeSpace, treeSpace, grassSpace, treeSpace, treeSpace},
-                    {treeSpace, grassSpace, grassSpace, grassSpace, grassSpace, treeSpace, grassSpace, treeSpace, treeSpace},
-                    {treeSpace, treeSpace, treeSpace, treeSpace, grassSpace, treeSpace, treeSpace, treeSpace, treeSpace},
-                    {treeSpace, treeSpace, treeSpace, treeSpace, playerSpace, treeSpace, treeSpace, treeSpace, treeSpace}
+                    {treeSpace, treeSpace, treeSpace, treeSpace, grassSpace, grassSpace, grassSpace, grassSpace, grassSpace},
+                    {treeSpace, treeSpace, treeSpace, treeSpace, treeSpace, treeSpace, treeSpace, treeSpace, grassSpace},
+                    {treeSpace, treeSpace, treeSpace, treeSpace, lootSpace, treeSpace, treeSpace, treeSpace, grassSpace},
+                    {treeSpace, grassSpace, grassSpace, grassSpace, grassSpace, grassSpace, grassSpace, treeSpace, grassSpace},
+                    {treeSpace, grassSpace, treeSpace, treeSpace, treeSpace, treeSpace, grassSpace, treeSpace, grassSpace},
+                    {treeSpace, grassSpace, grassSpace, grassSpace, lootSpace, treeSpace, grassSpace, treeSpace, grassSpace},
+                    {treeSpace, grassSpace, treeSpace, treeSpace, treeSpace, treeSpace, grassSpace, treeSpace, grassSpace},
+                    {treeSpace, grassSpace, grassSpace, grassSpace, grassSpace, treeSpace, grassSpace, treeSpace, grassSpace},
+                    {treeSpace, treeSpace, treeSpace, treeSpace, grassSpace, treeSpace, grassSpace, treeSpace, grassSpace},
+                    {treeSpace, treeSpace, treeSpace, treeSpace, playerSpace, treeSpace, grassSpace, grassSpace, grassSpace}
             };
             prev = grassSpace;
         }

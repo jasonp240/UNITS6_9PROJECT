@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2646f6b6-13ac-4903-a998-e544055d4f6b" name="Changes" comment="initial commit">
+    <list default="true" id="2646f6b6-13ac-4903-a998-e544055d4f6b" name="Changes" comment="finished move and also created maps 1 and 2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Map.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -23,7 +22,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="SET_USER_NAME_GLOBALLY" value="false" />
   </component>
   <component name="ProjectId" id="2dj4eLBqyUkuxDeRgtJlGP4x1Sq" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -59,11 +57,19 @@
       <option name="project" value="LOCAL" />
       <updated>1710508306688</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="finished move and also created maps 1 and 2">
+      <created>1710508690094</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1710508690094</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initial commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="initial commit" />
+    <MESSAGE value="finished move and also created maps 1 and 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="finished move and also created maps 1 and 2" />
   </component>
 </project>
