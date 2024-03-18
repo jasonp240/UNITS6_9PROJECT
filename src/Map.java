@@ -73,26 +73,59 @@ public class Map {
                 playerY = 9;
                 nextMap();
             } else {
-                curMap[playerY][playerX] = prev;
-                prev = curMap[playerY - 1][playerX];
-                curMap[playerY - 1][playerX] = playerSpace;
-                playerY--;
+                if (curMap[playerY - 1][playerX] != treeSpace) {
+                    curMap[playerY][playerX] = prev;
+                    if (curMap[playerY - 1][playerX] == lootSpace) {
+                        prev = grassSpace;
+                    } else {
+                        prev = curMap[playerY - 1][playerX];
+                    }
+                    curMap[playerY - 1][playerX] = playerSpace;
+                    playerY--;
+                } else {
+                    System.out.println("Theres a tree in the way!");
+                }
             }
         } else if (input.equals("S") && playerY < 9) {
-            curMap[playerY][playerX] = prev;
-            prev = curMap[playerY + 1][playerX];
-            curMap[playerY + 1][playerX] = playerSpace;
-            playerY++;
-        } else if (input.equals("D") && playerX < 7 ) {
-            curMap[playerY][playerX] = prev;
-            prev = curMap[playerY][playerX + 1];
-            curMap[playerY][playerX + 1] = playerSpace;
-            playerX++;
+            if (curMap[playerY + 1][playerX] != treeSpace) {
+                curMap[playerY][playerX] = prev;
+                if (curMap[playerY + 1][playerX] == lootSpace) {
+                    prev = grassSpace;
+                } else {
+                    prev = curMap[playerY + 1][playerX];
+                }
+                curMap[playerY + 1][playerX] = playerSpace;
+                playerY++;
+            } else {
+                System.out.println("Theres a tree in the way!");
+            }
+        } else if (input.equals("D") && playerX < 8) {
+            if (curMap[playerY][playerX + 1] != treeSpace) {
+                curMap[playerY][playerX] = prev;
+                if (curMap[playerY][playerX + 1] == lootSpace) {
+                    prev = grassSpace;
+                } else {
+                    prev = curMap[playerY][playerX + 1];
+                }
+                curMap[playerY][playerX + 1] = playerSpace;
+                playerX++;
+            } else {
+            System.out.println("Theres a tree in the way!");
+        }
+
         } else if (input.equals("A") && playerX > 0) {
-            curMap[playerY][playerX] = prev;
-            prev = curMap[playerY][playerX - 1];
-            curMap[playerY][playerX - 1] = playerSpace;
-            playerX--;
+            if (curMap[playerY][playerX - 1] != treeSpace) {
+                curMap[playerY][playerX] = prev;
+                if (curMap[playerY][playerX - 1] == lootSpace) {
+                    prev = grassSpace;
+                } else {
+                    prev = curMap[playerY][playerX - 1];
+                }
+                curMap[playerY][playerX - 1] = playerSpace;
+                playerX--;
+            } else {
+                System.out.println("Theres a tree in the way!");
+            }
         } else {
             System.out.println("You will go out of bound!");
         }
