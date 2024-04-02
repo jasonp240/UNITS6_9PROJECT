@@ -24,8 +24,8 @@ public class Map {
         playerX = 4;
         playerY = 9;
           curMap = new Space[][]{
-                  {lootSpace, treeSpace, treeSpace, walkSpace, walkSpace, walkSpace, treeSpace, treeSpace, treeSpace},
-                  {grassSpace, treeSpace, treeSpace, walkSpace, walkSpace, walkSpace, treeSpace, grassSpace, lootSpace},
+                  {treeSpace, treeSpace, treeSpace, walkSpace, walkSpace, walkSpace, treeSpace, treeSpace, treeSpace},
+                  {lootSpace, treeSpace, treeSpace, walkSpace, walkSpace, walkSpace, treeSpace, grassSpace, lootSpace},
                   {grassSpace, treeSpace, treeSpace, walkSpace, walkSpace, walkSpace, treeSpace, grassSpace, treeSpace},
                   {grassSpace, grassSpace, treeSpace, walkSpace, walkSpace, walkSpace, treeSpace, grassSpace, treeSpace},
                   {treeSpace, grassSpace, grassSpace, walkSpace, walkSpace, walkSpace, treeSpace, grassSpace, treeSpace},
@@ -131,5 +131,7 @@ public class Map {
         }
     }
 
-
+    public int getCurMapNum() {
+        return curMapNum;
+    }
 }

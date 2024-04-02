@@ -1,8 +1,16 @@
 public class Sword extends Loot {
     private int upgrade;
-    public Sword(String name, int durability) {
+    private int damage;
+    public Sword(String name, int durability, int damage) {
         super(name, durability);
         upgrade = 0;
+        this.damage = damage;
+    }
+
+    public Sword() {
+        super("Starter Sword", 10);
+        upgrade = 0;
+        damage = 5;
     }
 
     public boolean upgrade() {
@@ -13,4 +21,9 @@ public class Sword extends Loot {
             return true;
         }
     }
+
+    public int getDamage() {
+        return damage;
+    }
+
 }

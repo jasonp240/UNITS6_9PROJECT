@@ -14,6 +14,14 @@ public class Loot {
         return name;
     }
 
+    public int getCurDurability() {
+        return curDurability;
+    }
+
+    public int getMaxDurability() {
+        return maxDurability;
+    }
+
     public void use() {
         if (curDurability != 0) {
             curDurability--;

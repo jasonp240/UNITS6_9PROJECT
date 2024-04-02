@@ -1,8 +1,16 @@
 public class Armour extends Loot {
     private int upgrade;
-    public Armour(String name, int durability) {
+    private int protection;
+    public Armour(String name, int durability, int protection) {
         super(name, durability);
         upgrade = 0;
+        this.protection = protection;
+    }
+
+    public Armour() {
+        super("Starter Armour", 10);
+        upgrade = 0;
+        protection = 3;
     }
 
     public boolean upgrade() {
@@ -12,5 +20,9 @@ public class Armour extends Loot {
             upgrade++;
             return true;
         }
+    }
+
+    public int getProtection() {
+        return protection;
     }
 }

@@ -5,10 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2646f6b6-13ac-4903-a998-e544055d4f6b" name="Changes" comment="finished move and also created maps 1 and 2">
+      <change afterPath="$PROJECT_DIR$/src/Battle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/LootBox.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Mob.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Armour.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Armour.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Bow.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Potion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Potion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Loot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Loot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Map.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Sword.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sword.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
