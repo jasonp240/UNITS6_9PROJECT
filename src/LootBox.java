@@ -13,6 +13,7 @@ public class LootBox {
         if (tier == 1) {
             int potions = (int) (Math.random() * 3) + 1;
             for (int i = 0; i < potions; i++) {
+                System.out.println("+ Potion");
                 items.add(new Potion());
             }
         }
@@ -20,9 +21,11 @@ public class LootBox {
         int drop2 = (int) (Math.random() * 6) + 1;
         if (drop1 == 1) {
             items.add(generateWeapon());
+            System.out.println("+ Sword");
         }
         if (drop2 == 1) {
             items.add(generateArmour());
+            System.out.println("+ Armour");
         }
         return items;
     }

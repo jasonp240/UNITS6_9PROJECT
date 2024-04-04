@@ -53,12 +53,12 @@ public class Player {
             System.out.println("Current Armour:");
             System.out.println("Name: " + armour.getName());
             System.out.println("Durability: " + armour.getCurDurability() + "/" + armour.getMaxDurability());
-            System.out.println("Damage: " + armour.getProtection());
+            System.out.println("Protection: " + armour.getProtection());
             System.out.println("-----------------");
             System.out.println("New Armour: ");
             System.out.println("Name: " + newArmour.getName());
             System.out.println("Durability: " + newArmour.getCurDurability() + "/" + newArmour.getMaxDurability());
-            System.out.println("Damage: " + newArmour.getProtection());
+            System.out.println("Protection: " + newArmour.getProtection());
             System.out.println("-----------------");
             System.out.print("Would you like to replace the armour (y/n): ");
             String userInput = scan.nextLine();
@@ -88,7 +88,7 @@ public class Player {
         System.out.println("Armour:");
         System.out.println("Name: " + armour.getName());
         System.out.println("Durability: " + armour.getCurDurability() + "/" + armour.getMaxDurability());
-        System.out.println("Damage: " + armour.getProtection());
+        System.out.println("Protection: " + armour.getProtection());
         System.out.println("-----------------");
     }
 
@@ -106,6 +106,18 @@ public class Player {
 
     public void takeDamage(int damage) {
         health -= damage;
+    }
+
+    public int getNumPotions() {
+        return numPotions;
+    }
+
+    public void drinkPotion() {
+        numPotions--;
+        health += 2;
+        if (health > maxHealth) {
+            health = maxHealth;
+        }
     }
 
     private void addPotions(ArrayList<Loot> loot) {

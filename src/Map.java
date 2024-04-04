@@ -10,14 +10,18 @@ public class Map {
     private int playerY;
     private Space prev;
 
-    public Map() {
+    private Player player;
+
+    public Map(Player player) {
         playerSpace = new Space("\uD83E\uDDD1");
         grassSpace = new Space("\uD83D\uDFE9");
         walkSpace = new Space("\uD83D\uDFEB");
         lootSpace = new Space("\uD83D\uDCE6");
         treeSpace = new Space("\uD83C\uDF33");
         curMapNum = 0;
+        this.player = player;
         prev = walkSpace;
+
     }
 
     public void setupMap() {
@@ -77,8 +81,18 @@ public class Map {
                     curMap[playerY][playerX] = prev;
                     if (curMap[playerY - 1][playerX] == lootSpace) {
                         prev = grassSpace;
+                        LootBox lootBox = new LootBox(1);
+                        player.addLoot(lootBox.openBox());
                     } else {
                         prev = curMap[playerY - 1][playerX];
+                    }
+                    if (curMap[playerY - 1][playerX] == grassSpace) {
+                        int randomAttack = (int) (Math.random() * 4);
+                        if (randomAttack == 3) {
+                            System.out.println("You have run into a mob!");
+                            Battle battle = new Battle(new Mob(curMapNum), player);
+                            battle.fight();
+                        }
                     }
                     curMap[playerY - 1][playerX] = playerSpace;
                     playerY--;
@@ -91,8 +105,18 @@ public class Map {
                 curMap[playerY][playerX] = prev;
                 if (curMap[playerY + 1][playerX] == lootSpace) {
                     prev = grassSpace;
+                    LootBox lootBox = new LootBox(1);
+                    player.addLoot(lootBox.openBox());
                 } else {
                     prev = curMap[playerY + 1][playerX];
+                }
+                if (curMap[playerY + 1][playerX] == grassSpace) {
+                    int randomAttack = (int) (Math.random() * 4);
+                    if (randomAttack == 3) {
+                        System.out.println("You have run into a mob!");
+                        Battle battle = new Battle(new Mob(curMapNum), player);
+                        battle.fight();
+                    }
                 }
                 curMap[playerY + 1][playerX] = playerSpace;
                 playerY++;
@@ -104,8 +128,18 @@ public class Map {
                 curMap[playerY][playerX] = prev;
                 if (curMap[playerY][playerX + 1] == lootSpace) {
                     prev = grassSpace;
+                    LootBox lootBox = new LootBox(1);
+                    player.addLoot(lootBox.openBox());
                 } else {
                     prev = curMap[playerY][playerX + 1];
+                }
+                if (curMap[playerY][playerX + 1] == grassSpace) {
+                    int randomAttack = (int) (Math.random() * 4);
+                    if (randomAttack == 3) {
+                        System.out.println("You have run into a mob!");
+                        Battle battle = new Battle(new Mob(curMapNum), player);
+                        battle.fight();
+                    }
                 }
                 curMap[playerY][playerX + 1] = playerSpace;
                 playerX++;
@@ -118,8 +152,18 @@ public class Map {
                 curMap[playerY][playerX] = prev;
                 if (curMap[playerY][playerX - 1] == lootSpace) {
                     prev = grassSpace;
+                    LootBox lootBox = new LootBox(1);
+                    player.addLoot(lootBox.openBox());
                 } else {
                     prev = curMap[playerY][playerX - 1];
+                }
+                if (curMap[playerY][playerX - 1] == grassSpace) {
+                    int randomAttack = (int) (Math.random() * 4);
+                    if (randomAttack == 3) {
+                        System.out.println("You have run into a mob!");
+                        Battle battle = new Battle(new Mob(curMapNum), player);
+                        battle.fight();
+                    }
                 }
                 curMap[playerY][playerX - 1] = playerSpace;
                 playerX--;
