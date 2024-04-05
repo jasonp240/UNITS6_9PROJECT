@@ -9,6 +9,8 @@ public class GameLogic {
         System.out.println("- You can not walk into trees \uD83C\uDF33");
         System.out.println("- Grass \uD83D\uDFE9 has a random chance of making you fight a monster");
         System.out.println("- WorkBenches \uD83D\uDEE0\uFE0F allow you to fix your items");
+        System.out.println("- If your sword breaks you will lose the battle");
+        System.out.println("- If your armor breaks you will take a lot of damage");
         System.out.println("- In order to interact with the game use w, a, s, d, 1, and 2");
         System.out.println("Have fun!");
         Player player = new Player();
