@@ -26,8 +26,8 @@ public class LootBox {
             System.out.println("+ Sword");
 //        }
 //        if (drop2 == 1) {
-            items.add(generateArmour());
-            System.out.println("+ Armour");
+            items.add(generateArmor());
+            System.out.println("+ Armor");
 //        }
         return items;
     }
@@ -37,8 +37,11 @@ public class LootBox {
         return new Sword("Basic Sword", 10, damage);
     }
 
-    private Loot generateArmour() {
+    private Loot generateArmor() {
         int protection = (int) (Math.random() * (3 + mapNum)) + 4 + mapNum;
-        return new Armour("Basic Armour", 10, protection);
+        if (mapNum == 0) {
+            protection = 5;
+        }
+        return new Armor("Basic Armor", 10, protection);
     }
 }

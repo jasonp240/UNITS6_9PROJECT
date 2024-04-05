@@ -80,8 +80,7 @@ public class Map {
         playerX = 4;
         playerY = 9;
         player.reset();
-        player.increaseMaxHealth();
-        player.increaseMaxHealth();
+        player.setMaxHealth(player.getMaxHealth() + 2);
         player.setPotion5();
         curMap = getMap(curMapNum);
         if (curMapNum == 0 || curMapNum == 3 || curMapNum == 2) {
@@ -138,9 +137,8 @@ public class Map {
             }
         } else if (input.equals("S") && playerY < 9) {
             if (curMap[playerY + 1][playerX] == fixSpace) {
-                System.out.println("Your armour and sword have been fixed!");
                 player.getSword().fix();
-                player.getArmour().fix();
+                player.getArmor().fix();
                 allow = false;
             } else {
                 if (curMap[playerY + 1][playerX] != treeSpace) {
@@ -175,9 +173,8 @@ public class Map {
             }
         } else if (input.equals("D") && playerX < 8) {
             if (curMap[playerY][playerX + 1] == fixSpace) {
-                System.out.println("Your armour and sword have been fixed!");
                 player.getSword().fix();
-                player.getArmour().fix();
+                player.getArmor().fix();
                 allow = false;
             } else {
                 if (curMap[playerY][playerX + 1] != treeSpace) {
@@ -212,9 +209,8 @@ public class Map {
             }
         } else if (input.equals("A") && playerX > 0) {
             if (curMap[playerY][playerX - 1] == fixSpace) {
-                System.out.println("Your armour and sword have been fixed!");
                 player.getSword().fix();
-                player.getArmour().fix();
+                player.getArmor().fix();
                 allow = false;
             } else {
                 if (curMap[playerY][playerX - 1] != treeSpace) {

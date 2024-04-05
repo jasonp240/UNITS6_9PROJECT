@@ -1,4 +1,3 @@
-import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class Battle {
@@ -13,7 +12,7 @@ public class Battle {
     }
 
     public boolean fight() {
-        if (player.getArmour().getProtection() >= mob.getDamage()) {
+        if (player.getArmor().getProtection() >= mob.getDamage()) {
             System.out.println("-----------------");
             System.out.println(mob.getName() + "'s Health");
             System.out.println(mob.getHealth() + "/" + mob.getMaxHealth());
@@ -70,9 +69,9 @@ public class Battle {
                 player.getSword().use();
             }
             if (!mob.isDead()) {
-                System.out.println("The " + mob.getName() + " attacks the player for " + (mob.getDamage() - player.getArmour().getProtection()) + " damage!");
-                player.takeDamage(mob.getDamage() - player.getArmour().getProtection());
-                player.getArmour().use();
+                System.out.println("The " + mob.getName() + " attacks the player for " + (mob.getDamage() - player.getArmor().getProtection()) + " damage!");
+                player.takeDamage(mob.getDamage() - player.getArmor().getProtection());
+                player.getArmor().use();
             }
             if (player.isDead()) {
                 System.out.println("The player has been killed!");

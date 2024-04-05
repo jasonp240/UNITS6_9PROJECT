@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class Player {
     private Sword sword;
-    private Armour armour;
+    private Armor Armor;
     private int numPotions;
     private final Scanner scan;
     private int health;
@@ -15,7 +15,7 @@ public class Player {
         scan = new Scanner(System.in);
         numPotions = 5;
         sword = new Sword();
-        armour = new Armour();
+        Armor = new Armor();
         health = 10;
         maxHealth = 10;
         win = false;
@@ -49,30 +49,30 @@ public class Player {
                 System.out.println("Sword Updated!");
             }
         }
-        if (checkArmour(loot) != null) {
-            Armour newArmour = (Armour) checkArmour(loot);
-            System.out.println("There is Armour in the loot!");
+        if (checkArmor(loot) != null) {
+            Armor newArmor = (Armor) checkArmor(loot);
+            System.out.println("There is Armor in the loot!");
             System.out.println("-----------------");
-            System.out.println("Current Armour:");
-            System.out.println("Name: " + armour.getName());
-            System.out.println("Durability: " + armour.getCurDurability() + "/" + armour.getMaxDurability());
-            System.out.println("Protection: " + armour.getProtection());
+            System.out.println("Current Armor:");
+            System.out.println("Name: " + Armor.getName());
+            System.out.println("Durability: " + Armor.getCurDurability() + "/" + Armor.getMaxDurability());
+            System.out.println("Protection: " + Armor.getProtection());
             System.out.println("-----------------");
-            System.out.println("New Armour: ");
-            System.out.println("Name: " + newArmour.getName());
-            System.out.println("Durability: " + newArmour.getCurDurability() + "/" + newArmour.getMaxDurability());
-            System.out.println("Protection: " + newArmour.getProtection());
+            System.out.println("New Armor: ");
+            System.out.println("Name: " + newArmor.getName());
+            System.out.println("Durability: " + newArmor.getCurDurability() + "/" + newArmor.getMaxDurability());
+            System.out.println("Protection: " + newArmor.getProtection());
             System.out.println("-----------------");
-            System.out.print("Would you like to replace the armour (y/n): ");
+            System.out.print("Would you like to replace the Armor (y/n): ");
             String userInput = scan.nextLine();
             while (!userInput.equals("y") && !userInput.equals("n")) {
                 System.out.println("Invalid input!");
-                System.out.print("Would you like to replace the armour (y/n): ");
+                System.out.print("Would you like to replace the Armor (y/n): ");
                 userInput = scan.nextLine();
             }
             if (userInput.equals("y")) {
-                armour = newArmour;
-                System.out.println("Armour Updated!");
+                Armor = newArmor;
+                System.out.println("Armor Updated!");
             }
         }
     }
@@ -88,10 +88,10 @@ public class Player {
         System.out.println("Durability: " + sword.getCurDurability() + "/" + sword.getMaxDurability());
         System.out.println("Damage: " + sword.getDamage());
         System.out.println("-----------------");
-        System.out.println("Armour:");
-        System.out.println("Name: " + armour.getName());
-        System.out.println("Durability: " + armour.getCurDurability() + "/" + armour.getMaxDurability());
-        System.out.println("Protection: " + armour.getProtection());
+        System.out.println("Armor:");
+        System.out.println("Name: " + Armor.getName());
+        System.out.println("Durability: " + Armor.getCurDurability() + "/" + Armor.getMaxDurability());
+        System.out.println("Protection: " + Armor.getProtection());
         System.out.println("-----------------");
     }
 
@@ -119,8 +119,8 @@ public class Player {
         return sword;
     }
 
-    public Armour getArmour() {
-        return armour;
+    public Armor getArmor() {
+        return Armor;
     }
 
     public boolean isDead() {
@@ -148,6 +148,10 @@ public class Player {
         if (numPotions < 5) {
             numPotions = 5;
         }
+    }
+
+    public void setMaxHealth(int maxHealth) {
+        this.maxHealth = maxHealth;
     }
 
     public boolean isWin() {
@@ -187,9 +191,9 @@ public class Player {
         return null;
     }
 
-    private Loot checkArmour(ArrayList<Loot> loot) {
+    private Loot checkArmor(ArrayList<Loot> loot) {
         for (Loot item : loot) {
-            if (item instanceof Armour) {
+            if (item instanceof Armor) {
                 return item;
             }
         }

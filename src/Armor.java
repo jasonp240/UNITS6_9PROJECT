@@ -1,18 +1,19 @@
-public class Armour extends Loot {
+public class Armor extends Loot {
     private int protection;
-    public Armour(String name, int durability, int protection) {
+    public Armor(String name, int durability, int protection) {
         super(name, durability);
         this.protection = protection;
     }
 
-    public Armour() {
-        super("Starter Armour", 10);
+    public Armor() {
+        super("Starter Armor", 10);
         protection = 2;
     }
 
     @Override
     public void fix() {
         super.fix();
+        System.out.println("Armor fixed!");
     }
 
     public int getProtection() {

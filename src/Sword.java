@@ -14,4 +14,10 @@ public class Sword extends Loot {
         return damage;
     }
 
+    @Override
+    public void fix() {
+        super.fix();
+        System.out.println("Sword fixed!");
+    }
+
 }
