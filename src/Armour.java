@@ -1,28 +1,24 @@
 public class Armour extends Loot {
-    private int upgrade;
     private int protection;
     public Armour(String name, int durability, int protection) {
         super(name, durability);
-        upgrade = 0;
         this.protection = protection;
     }
 
     public Armour() {
         super("Starter Armour", 10);
-        upgrade = 0;
-        protection = 3;
+        protection = 2;
     }
 
-    public boolean upgrade() {
-        if (upgrade < 10) {
-            return false;
-        } else {
-            upgrade++;
-            return true;
-        }
+    @Override
+    public void fix() {
+        super.fix();
     }
 
     public int getProtection() {
+        if (super.isBroken()) {
+            return 0;
+        }
         return protection;
     }
 }

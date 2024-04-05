@@ -7,8 +7,7 @@ public class Main {
         Scanner scan = new Scanner(System.in);
         Map i = new Map(player);
         i.setupMap();
-        int x = 0;
-        while (x == 0) {
+        while (!player.isWin()) {
             player.printStatus();
             i.printMap();
             System.out.print(": ");
@@ -16,3 +15,5 @@ public class Main {
         }
     }
 }
+
+

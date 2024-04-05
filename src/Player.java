@@ -8,14 +8,17 @@ public class Player {
     private final Scanner scan;
     private int health;
     private int maxHealth;
+    private boolean isDead;
+    private boolean win;
 
     public Player() {
         scan = new Scanner(System.in);
-        numPotions = 2;
+        numPotions = 5;
         sword = new Sword();
         armour = new Armour();
         health = 10;
         maxHealth = 10;
+        win = false;
     }
 
     public void addLoot(ArrayList<Loot> loot) {
@@ -94,6 +97,7 @@ public class Player {
 
     public void increaseMaxHealth() {
         maxHealth++;
+        System.out.println("You have won the battle your Max HP increases by 1!");
     }
 
     public int getHealth() {
@@ -106,6 +110,21 @@ public class Player {
 
     public void takeDamage(int damage) {
         health -= damage;
+        if (health <= 0) {
+            isDead = true;
+        }
+    }
+
+    public Sword getSword() {
+        return sword;
+    }
+
+    public Armour getArmour() {
+        return armour;
+    }
+
+    public boolean isDead() {
+        return isDead;
     }
 
     public int getNumPotions() {
@@ -114,9 +133,40 @@ public class Player {
 
     public void drinkPotion() {
         numPotions--;
-        health += 2;
+        health += (int) Math.round(maxHealth * .4);
         if (health > maxHealth) {
             health = maxHealth;
+        }
+    }
+
+    public void reset() {
+        health = maxHealth;
+        isDead = false;
+    }
+
+    public void setPotion5() {
+        if (numPotions < 5) {
+            numPotions = 5;
+        }
+    }
+
+    public boolean isWin() {
+        return win;
+    }
+
+    public void winSet() {
+        win = true;
+    }
+
+    public void death() {
+        if (maxHealth >= 12) {
+            maxHealth -= 2;
+            System.out.println("Max Health -2");
+        } else {
+            if (maxHealth == 11) {
+                System.out.println("Max Health -1");
+                maxHealth--;
+            }
         }
     }
 
@@ -145,4 +195,5 @@ public class Player {
         }
         return null;
     }
+
 }
