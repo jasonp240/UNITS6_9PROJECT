@@ -79,8 +79,8 @@ public class Map {
     public void reset(int num) {
         playerX = 4;
         playerY = 9;
-        player.reset();
         player.setMaxHealth(player.getMaxHealth() + 2);
+        player.reset();
         player.setPotion5();
         curMap = getMap(curMapNum);
         if (curMapNum == 0 || curMapNum == 3 || curMapNum == 2) {
